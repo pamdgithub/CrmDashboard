@@ -1,0 +1,14 @@
+{
+  "name": "dynamics",
+  "version": "1.0.0",
+  "description": "dynamics menus with gulp builder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "pRamod",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
