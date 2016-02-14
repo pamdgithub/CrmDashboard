@@ -3,17 +3,16 @@ var gulp = require('gulp'),
     jscs = require('gulp-jscs'),
     gulpprint = require('gulp-print'),
     gulpif = require('gulp-if'),
+    config = require('./gulp.config')(),
     args = require('yargs').argv;
+
 gulp.task('default', function() {
     //place code for your default task here
 });
 
 gulp.task('vet',function() {
     return gulp
-    .src([
-        './src/**/*.js',
-        './*.js'
-    ])
+    .src(config.alljs)
     .pipe(gulpif(args.verbose,gulpprint()))
     .pipe(jscs())
     .pipe(jshint())
