@@ -16,5 +16,5 @@ gulp.task('vet',function(){
     .pipe(jscs())
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish',{verbose:true}));
-    
+   
 });
