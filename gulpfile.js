@@ -1,10 +1,7 @@
 var gulp = require('gulp'),
-    jshint = require('gulp-jshint'),
-    jscs = require('gulp-jscs'),
-    gulpprint = require('gulp-print'),
-    gulpif = require('gulp-if'),
+    args = require('yargs').argv,
     config = require('./gulp.config')(),
-    args = require('yargs').argv;
+    $ = require('gulp-load-plugins')({lazy:true});
 
 gulp.task('default', function() {
     //place code for your default task here
@@ -13,8 +10,11 @@ gulp.task('default', function() {
 gulp.task('vet',function() {
     return gulp
     .src(config.alljs)
-    .pipe(gulpif(args.verbose,gulpprint()))
-    .pipe(jscs())
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish',{verbose:true}));
+    .pipe($.if(args.verbose,$.print()))
+    .pipe($.jscs())
+    .pipe($.jscs.reporter())
+    .pipe($.jscs.reporter('fail'))
+    .pipe($.jshint())
+    .pipe($.jshint.reporter('jshint-stylish',{verbose:true}))
+	.pipe($.jshint.reporter('fail'));
 });

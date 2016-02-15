@@ -13,6 +13,7 @@
     "gulp-if": "^2.0.0",
     "gulp-jscs": "^3.0.2",
     "gulp-jshint": "^2.0.0",
+    "gulp-load-plugins": "^1.2.0",
     "gulp-notify": "^2.2.0",
     "gulp-notify-growl": "^1.0.2",
     "gulp-print": "^2.0.1",
